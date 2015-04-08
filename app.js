@@ -27,7 +27,7 @@ function app(db){
   //app.use('/', routes);
   //app.use('/users', users);
   app.get("/", function(req, res){
-		var file = path.join(__dirname, 'public/front-end/index.html');
+		var file = path.join(__dirname, 'public/front-end/Ejercicioindex.html');
 		res.sendFile(file);
 	});
 
