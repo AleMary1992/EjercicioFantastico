@@ -27,16 +27,22 @@ function app(db){
   //app.use('/', routes);
   //app.use('/users', users);
   app.get("/", function(req, res){
-		var file = path.join(__dirname, 'public/front-end/Ejercicioindex.html');
+		var file = path.join(__dirname, 'public/front-end/post.html');
 		res.sendFile(file);
 	});
 
   //Levantamos la ruta del api
-  var apiRoute = require('./routes/api_v1')(db);
-  app.use("/api", apiRoute);
+//  var apiRoute = require('./routes/api_v1')(db);
+//  app.use("/api", apiRoute);
+
+
+
+
+    var apiRoute = require('./routes/apiFant')(db);
+    app.use("/api", apiRoute);
   // catch 404 and forward to error handler
   app.use(function(req, res, next) {
-    var err = new Error('Not Found');
+    var err = new Error('Not Found')
     err.status = 404;
     next(err);
   });
